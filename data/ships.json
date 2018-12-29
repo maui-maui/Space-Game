@@ -1,0 +1,10 @@
+Klingonbirdofprey = {
+    "shiptype":"Klingon",
+    "shipnames":"Bird of Prey",
+    "hitpointmax":"100",
+    "hitpointmin":"10",
+    "health":"5000",
+    "shieldenergy":"5000",
+    "warptime":"4"
+}
+
