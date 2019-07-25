@@ -251,71 +251,71 @@ def mapcommand():
     if cquadrant == 1:
         if csector == 1:
             print('\n'.join(list(' '.join(x) for x in maps['sectoraa'])))
-            maps['sectoraa[gridx][gridy]'] = '#'
-            maps['sectoraa[cgridx][cgridy]'] = '@'
+            maps['sectoraa'][gridx][gridy] = '#'
+            maps['sectoraa'][cgridx][cgridy] = '@'
         if csector == 2:
             print('\n'.join(list(' '.join(x) for x in maps['sectorab'])))
-            maps['sectorab[gridx][gridy]'] = '#'
-            maps['sectorab[cgridx][cgridy]'] = '@'
+            maps['sectorab'][gridx][gridy] = '#'
+            maps['sectorab'][cgridx][cgridy] = '@'
         if csector == 3:
             print('\n'.join(list(' '.join(x) for x in maps['sectorac'])))
-            maps['sectorac[gridx][gridy]'] = '#'
-            maps['sectorac[cgridx][cgridy]'] = '@'
+            maps['sectorac'][gridx][gridy] = '#'
+            maps['sectorac'][cgridx][cgridy] = '@'
         if csector == 4:
             print('\n'.join(list(' '.join(x) for x in maps['sectorad'])))
-            maps['sectorad[gridx][gridy]'] = '#'
-            maps['sectorad[cgridx][cgridy]'] = '@'
-    if cquadrant == 2:
+            maps['sectorad'][gridx][gridy] = '#'
+            maps['sectorad'][cgridx][cgridy] = '@'  
+   if cquadrant == 2:
         if csector == 1:
             print('\n'.join(list(' '.join(x) for x in maps['sectorba'])))
-            maps['sectorba[gridx][gridy]'] = '#'
-            maps['sectorba[cgridx][cgridy]'] = '@'
+            maps['sectorba'][gridx][gridy] = '#'
+            maps['sectorba'][cgridx][cgridy] = '@'
         if csector == 2:
             print('\n'.join(list(' '.join(x) for x in maps['sectorbb'])))
-            maps['sectorbb[gridx][gridy]'] = '#'
-            maps['sectorbb[cgridx][cgridy]'] = '@'
+            maps['sectorbb'][gridx][gridy] = '#'
+            maps['sectorbb'][cgridx][cgridy] = '@'
         if csector == 3:
             print('\n'.join(list(' '.join(x) for x in maps['sectorbc'])))
-            maps['sectorbc[gridx][gridy]'] = '#'
-            maps['sectorbc[cgridx][cgridy]'] = '@'
+            maps['sectorbc'][gridx][gridy] = '#'
+            maps['sectorbc'][cgridx][cgridy] = '@'
         if csector == 4:
             print('\n'.join(list(' '.join(x) for x in maps['sectorbd'])))
-            maps['sectorbd[gridx][gridy]'] = '#'
-            maps['sectorbd[cgridx][cgridy]'] = '@'
+            maps['sectorbd'][gridx][gridy] = '#'
+            maps['sectorbd'][cgridx][cgridy] = '@'
     if cquadrant == 3:
         if csector == 1:
             print('\n'.join(list(' '.join(x) for x in maps['sectorca'])))
-            maps['sectorca[gridx][gridy]'] = '#'
-            maps['sectorca[cgridx][cgridy]'] = '@'
+            maps['sectorca'][gridx][gridy] = '#'
+            maps['sectorca'][cgridx][cgridy] = '@'
         if csector == 2:
             print('\n'.join(list(' '.join(x) for x in maps['sectorcb'])))
-            maps['sectorcb[gridx][gridy]'] = '#'
-            maps['sectorcb[cgridx][cgridy]'] = '@'
+            maps['sectorcb'][gridx][gridy] = '#'
+            maps['sectorcb'][cgridx][cgridy] = '@'
         if csector == 3:
             print('\n'.join(list(' '.join(x) for x in maps['sectorcc'])))
-            maps['sectorcc[gridx][gridy]'] = '#'
-            maps['sectorcc[cgridx][cgridy]'] = '@'
+            maps['sectorcc'][gridx][gridy] = '#'
+            maps['sectorcc'][cgridx][cgridy] = '@'
         if csector == 4:
             print('\n'.join(list(' '.join(x) for x in maps['sectorcd'])))
-            maps['sectorcd[gridx][gridy]'] = '#'
-            maps['sectorcd[cgridx][cgridy]'] = '@'
+            maps['sectorcd'][gridx][gridy] = '#'
+            maps['sectorcd'][cgridx][cgridy] = '@'
     if cquadrant == 4:
         if csector == 1:
             print('\n'.join(list(' '.join(x) for x in maps['sectorda'])))
-            maps['sectorda[gridx][gridy]'] = '#'
-            maps['sectorda[cgridx][cgridy]'] = '@'
+            maps['sectorda'][gridx][gridy] = '#'
+            maps['sectorda'][cgridx][cgridy] = '@'
         if csector == 2:
             print('\n'.join(list(' '.join(x) for x in maps['sectordb'])))
-            maps['sectordb[gridx][gridy]'] = '#'
-            maps['sectordb[cgridx][cgridy]'] = '@'
+            maps['sectordb'][gridx][gridy] = '#'
+            maps['sectordb'][cgridx][cgridy] = '@'
         if csector == 3:
             print('\n'.join(list(' '.join(x) for x in maps['sectordc'])))
-            maps['sectordc[gridx][gridy]'] = '#'
-            maps['sectordc[cgridx][cgridy]'] = '@'
+            maps['sectordc'][gridx][gridy] = '#'
+            maps['sectordc'][cgridx][cgridy] = '@'
         if csector == 4:
             print('\n'.join(list(' '.join(x) for x in maps['sectordd'])))
-            maps['sectordd[gridx][gridy]'] = '#'
-            maps['sectordd[cgridx][cgridy]'] = '@'
+            maps['sectordd'][gridx][gridy] = '#'
+            maps['sectordd'][cgridx][cgridy] = '@'
 
 def warpcommand():
     print(f"Your current warp speed is {player.stats['warpspeed']}")
