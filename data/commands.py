@@ -111,8 +111,10 @@ def helpcommand():
 This is the help menu...
     You can access this menu at anytime by typing 'help' or '?'
     (without the quotes) when your prompted for a command.
+                   
     To get help on a specific command type either ? command or
     'help command'(without the quotes).
+                   
     *move - Move around the map.
     warp - Set your warp speed (1-10).
     transport - If your in orbit of a planet or docked at a base you can transport to either the planet or the base.
@@ -387,7 +389,8 @@ def command():
 def startup():
     print("""
 --------------------------------
-Welcome to Star Trek Python Game
+Welcome to Space Exploration Game
+                   coded in py
      By: DrProfMaui
 --------------------------------
 """)
