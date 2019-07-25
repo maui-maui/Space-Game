@@ -265,7 +265,7 @@ def mapcommand():
             print('\n'.join(list(' '.join(x) for x in maps['sectorad'])))
             maps['sectorad'][gridx][gridy] = '#'
             maps['sectorad'][cgridx][cgridy] = '@'  
-   if cquadrant == 2:
+    if cquadrant == 2:
         if csector == 1:
             print('\n'.join(list(' '.join(x) for x in maps['sectorba'])))
             maps['sectorba'][gridx][gridy] = '#'
