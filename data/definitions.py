@@ -79,10 +79,9 @@ rs = shields.shields["right"]
 
 avgshields = commands.shieldsavg(fs,bs,ls,rs)
 
-player = classes.Character(2000, 25, 25, 1000, 6, 5)
+player = classes.Character("WASD",2000, 25, 25, 1000, 6, 5)
 playerlocation = classes.Location(1,1,1,1)
 damage = classes.Damage(0,avgshields,0,0,0)
-
 
 status = classes.Ship(" ","on",2000,2000,1)
 sn = status.status["shipname"]

@@ -91,23 +91,10 @@ Location:
   -Y Coord: {ly}
 Ship:
   -Ship Name: {definitions.status.status['shipname']}
+
+MODE: ({definitions.player.stats["mode"]})
     """)
     print(playerchart)
-
-def setname():
-    name = input("What is your name captain?\n>>  ")
-    print(f"Welcome aboard Captain {name}")
-
-def setshipname():
-
-    shipname = input("What shall we call your ship?\n>>  ")
-    if len(shipname) <= 2:
-        shnm = random.sample(["Deluxe","Voltage","Titan"],1)
-        definitions.status.status["shipname"] = 'S.S.'.join(shnm)
-    else:
-        definitions.status.status["shipname"] = shipname
-    print(f"Captain Your ship name is set to {definitions.status.status['shipname']}")
-    command()
 
 def movecommand():
     print("Move command:")
@@ -257,31 +244,20 @@ def mapcommand():
             maps['sectordd'][gridx][gridy] = '#'
             maps['sectordd'][cgridx][cgridy] = '@'
 
-def warpcommand():
-    print(f"Your current warp speed is {definitions.player.stats['warpspeed']}")
-    choice = input("Would you like to change your warp speed? (Y/N)\n>> ")
-    if choice in ["y","YES","Y","yes"]:
-        setwarpspeed = int(input("Choose a speed between 1-10\n>> "))
-        if setwarpspeed <= 10:
-            definitions.player.stats["warpspeed"] = setwarpspeed
-            print(f"Warp speed now set to: {definitions.player.stats['warpspeed']}")
-            command()
-        else:
-            print("Incorrect Value! Try Again!")
-            time.sleep(2)
-            warpcommand()
-    else:
-        command()
-
 def command():
     commands = input("COMMAND >> ")
+#########################################################################
+########################## Help Commands ################################
+#########################################################################
     if commands in ["help","?"]:
         help.helpcommand()
     elif commands in ["? map","help map"]:
         help.helpmap()
     elif commands in ["? move","help move"]:
         help.helpmove()
-
+#########################################################################
+########################## Control Commands #############################
+#########################################################################
     elif commands in ["warp","w","WARP","W"]:
         warpcommand()
     elif commands in ["move","mv"]:
@@ -293,9 +269,9 @@ def command():
         playerchart()
         command()
 
+#################### Game SYS ######################################
     elif commands in ['set',"SET","settings","SETTINGS"]:
         settings.settings()
-
     elif commands in ["clean","clear","cls","clr"]:
         os.system("clear")
         command()
@@ -314,7 +290,9 @@ def command():
         if helpprompt in ["yes",'YES',"y","Y"]:
             help.helpcommand()
         command()
-
+#########################################################################
+##################### Start Up ##########################################
+#########################################################################
 def startup():
     print("""
 --------------------------------
@@ -323,9 +301,10 @@ Welcome to Space Exploration Game
      By: DrProfMaui
 --------------------------------
 """)
-    setname()
-    setshipname()
+    settings.setname()
+    settings.setshipname()
     command()
 
 def shipchooser():
     print(f"Your ship is currently set to {shipname}")
+#########################################################################

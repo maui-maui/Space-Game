@@ -1,7 +1,8 @@
 
 class Character:
-    def __init__(self, money, photons, phasers, cannon, warpspeed, probes):
+    def __init__(self,mode, money, photons, phasers, cannon, warpspeed, probes):
         self.stats = {
+            "mode" : "WASD",
             "money" : money,
             "photons" : photons,
             "phasers" : phasers,
