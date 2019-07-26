@@ -45,4 +45,33 @@ This is the help menu...
     clear - Clear screen
     settings - Change your settings
     """)
-    command()
+    commands.command()
+
+def helpmap2():
+        print("""
+LOCATION ranges:
+Quadrant: 1-4
+Sector: 1-4
+Grid: y = 1-9 x = 1-9
+LOCATION Example:
+Q: 1
+S: 2
+G: 6-2
+|
+|--> 1-2|6-2
+    """)
+
+def helpmap():
+    print(f"{definitions.mapkey}")
+    time.sleep(2)
+    print(f"{definitions.mapquads}")
+    time.sleep(2)
+    print(f"{definitions.mapsectors}")
+    time.sleep(2)
+    print(f"{definitions.fullmap}")
+    time.sleep(2)
+    helpmap2()
+    commands.command()
+
+def helpmove():
+    pass

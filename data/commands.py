@@ -3,7 +3,7 @@ import json
 import time
 from . import definitions
 from . import classes
-from . import help 
+from . import help
 import os
 import sys
 
@@ -108,43 +108,6 @@ def setshipname():
     print(f"Captain Your ship name is set to {definitions.status.status['shipname']}")
     command()
 
-def helpcommand():
-    print("""
-This is the help menu...
-    You can access this menu at anytime by typing 'help' or '?'
-    (without the quotes) when your prompted for a command.
-
-    To get help on a specific command type either ? command or
-    'help command'(without the quotes).
-
-    *move - Move around the map.
-    warp - Set your warp speed (1-10).
-    transport - If your in orbit of a planet or docked at a base you can transport to either the planet or the base.
-    dock - Dock into a base if you are on one of the adjacent places.
-    orbit - Orbit a planet.
-    status - Info
-    damage -
-    logs -
-    missions -
-    repairs -
-    warp - Change your warp speed.
-    planet scanner -
-    mine -
-    search -
-    chart -
-    srscan - Scans the current quadrant(Sectors 1-4 of quadrant x).
-    lrscan - Scans all 4 quadrants.
-    scan -
-    *map - Current Maps.
-    sector chart -
-    probe -
-
-    quit - Quit Game
-    clear - Clear screen
-    settings - Change your settings
-    """)
-    command()
-
 def movecommand():
     print("Move command:")
     time.sleep(1)
@@ -216,32 +179,6 @@ def movecommand():
         time.sleep(1)
         command()
     mvcmd()
-
-def helpmap2():
-    print("""
-LOCATION ranges:
-Quadrant: 1-4
-Sector: 1-4
-Grid: y = 1-9 x = 1-9
-LOCATION Example:
-Q: 1
-S: 2
-G: 6-2
-|
-|--> 1-2|6-2
-    """)
-
-def helpmap():
-    print(f"{definitions.mapkey}")
-    time.sleep(2)
-    print(f"{definitions.mapquads}")
-    time.sleep(2)
-    print(f"{definitions.mapsectors}")
-    time.sleep(2)
-    print(f"{definitions.fullmap}")
-    time.sleep(2)
-    helpmap2()
-    command()
 
 def mapcommand():
     cquadrant = definitions.playerlocation.location["quadrant"]
@@ -335,17 +272,14 @@ def warpcommand():
     else:
         command()
 
-def helpmove():
-    pass
-
 def command():
     commands = input("COMMAND >> ")
     if commands in ["help","?"]:
-        helpcommand()
+        help.helpcommand()
     elif commands in ["? map","help map"]:
-        helpmap()
+        help.helpmap()
     elif commands in ["? move","help move"]:
-        helpmove()
+        help.helpmove()
 
     elif commands in ["warp","w","WARP","W"]:
         warpcommand()
@@ -385,7 +319,7 @@ def command():
         print("Wrong Input! Try again.")
         helpprompt = input("Want to see the help command? (Y/N)\n")
         if helpprompt in ["yes",'YES',"y","Y"]:
-            helpcommand()
+            help.helpcommand()
         command()
 
 def startup():
