@@ -4,6 +4,7 @@ import time
 from . import definitions
 from . import classes
 from . import help
+from . import settings
 import os
 import sys
 
@@ -293,15 +294,7 @@ def command():
         command()
 
     elif commands in ['set',"SET","settings","SETTINGS"]:
-        choice = input("""
-        Change the following:
-        name - Your characters name.
-        shipname - Your ships name.
-        """)
-        if choice in ["cn","name","NAME"]:
-            setname()
-        elif choice in ["csn","cs","shipname","SHIPNAME"]:
-            setshipname()
+        settings.settings()
 
     elif commands in ["clean","clear","cls","clr"]:
         os.system("clear")

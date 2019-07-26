@@ -1,6 +1,7 @@
 import random
 import json
 import time
+from . import settings
 from . import definitions
 from . import commands
 from . import classes

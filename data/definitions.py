@@ -1,6 +1,7 @@
 from . import classes
 from . import commands
-from . import help 
+from . import help
+from . import settings
 import random
 
 mapkey = ("""
