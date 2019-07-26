@@ -95,12 +95,12 @@ Ship:
     print(playerchart)
 
 def setname():
-    name = input("What is your name captain? ")
+    name = input("What is your name captain?\n>>  ")
     print(f"Welcome aboard Captain {name}")
 
 def setshipname():
 
-    shipname = input("What shall we call your ship? ")
+    shipname = input("What shall we call your ship?\n>>  ")
     if len(shipname) <= 2:
         shnm = random.sample(["Deluxe","Voltage","Titan"],1)
         definitions.status.status["shipname"] = 'S.S.'.join(shnm)

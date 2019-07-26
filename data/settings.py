@@ -1,3 +1,5 @@
+from . import commands
+
 def settings():
         choice = input("""
         Player Settings:
@@ -6,9 +8,9 @@ def settings():
 
         Game Settings:
         wm -- WASD mode for controlling ship
-        tm -- TEXT mode for controlling ship 
+        tm -- TEXT mode for controlling ship
         """)
         if choice in ["cn","name","NAME"]:
-            setname()
+            commands.setname()
         elif choice in ["csn","cs","shipname","SHIPNAME"]:
-            setshipname()
+            commands.setshipname()
