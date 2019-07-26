@@ -1,5 +1,4 @@
 
-
 class Character:
     def __init__(self, money, photons, phasers, cannon, warpspeed, probes):
         self.stats = {

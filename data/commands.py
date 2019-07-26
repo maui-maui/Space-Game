@@ -3,7 +3,9 @@ import json
 import time
 from . import definitions
 from . import classes
-
+from . import help 
+import os
+import sys
 
 with open('data/maps.json', 'r') as f:
    maps = json.load(f)
@@ -31,12 +33,12 @@ def mapgen(planetarray):
                   planetarray[row_index][col_index] = 'B'
             else:
                pass
+    return
 
 def mapsetting():
     for i in range(1,17):
         if i == 1:
-            x = mapgen(definitions.planetarray)
-            maps["sectoraa"] = x
+            maps["sectoraa"] = definitions.planetarray
 
             with open('data/maps.json', 'w') as outfile:
              json.dump(maps, outfile)
@@ -96,11 +98,11 @@ def setname():
     print(f"Welcome aboard Captain {name}")
 
 def setshipname():
-    
+
     shipname = input("What shall we call your ship? ")
     if len(shipname) <= 2:
         shnm = random.sample(["Deluxe","Voltage","Titan"],1)
-        definitions.status.status["shipname"] = 'S.S.'.join(shnm)        
+        definitions.status.status["shipname"] = 'S.S.'.join(shnm)
     else:
         definitions.status.status["shipname"] = shipname
     print(f"Captain Your ship name is set to {definitions.status.status['shipname']}")
@@ -111,10 +113,10 @@ def helpcommand():
 This is the help menu...
     You can access this menu at anytime by typing 'help' or '?'
     (without the quotes) when your prompted for a command.
-                   
+
     To get help on a specific command type either ? command or
     'help command'(without the quotes).
-                   
+
     *move - Move around the map.
     warp - Set your warp speed (1-10).
     transport - If your in orbit of a planet or docked at a base you can transport to either the planet or the base.
@@ -230,13 +232,13 @@ G: 6-2
     """)
 
 def helpmap():
-    print(f"{mapkey}")
+    print(f"{definitions.mapkey}")
     time.sleep(2)
-    print(f"{mapquads}")
+    print(f"{definitions.mapquads}")
     time.sleep(2)
-    print(f"{mapsectors}")
+    print(f"{definitions.mapsectors}")
     time.sleep(2)
-    print(f"{fullmap}")
+    print(f"{definitions.fullmap}")
     time.sleep(2)
     helpmap2()
     command()
@@ -264,7 +266,7 @@ def mapcommand():
         if csector == 4:
             print('\n'.join(list(' '.join(x) for x in maps['sectorad'])))
             maps['sectorad'][gridx][gridy] = '#'
-            maps['sectorad'][cgridx][cgridy] = '@'  
+            maps['sectorad'][cgridx][cgridy] = '@'
     if cquadrant == 2:
         if csector == 1:
             print('\n'.join(list(' '.join(x) for x in maps['sectorba'])))
@@ -318,13 +320,13 @@ def mapcommand():
             maps['sectordd'][cgridx][cgridy] = '@'
 
 def warpcommand():
-    print(f"Your current warp speed is {player.stats['warpspeed']}")
+    print(f"Your current warp speed is {definitions.player.stats['warpspeed']}")
     choice = input("Would you like to change your warp speed? (Y/N)\n>> ")
     if choice in ["y","YES","Y","yes"]:
         setwarpspeed = int(input("Choose a speed between 1-10\n>> "))
         if setwarpspeed <= 10:
-            player.stats["warpspeed"] = setwarpspeed
-            print(f"Warp speed now set to: {player.stats['warpspeed']}")
+            definitions.player.stats["warpspeed"] = setwarpspeed
+            print(f"Warp speed now set to: {definitions.player.stats['warpspeed']}")
             command()
         else:
             print("Incorrect Value! Try Again!")

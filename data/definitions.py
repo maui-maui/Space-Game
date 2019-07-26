@@ -1,5 +1,6 @@
 from . import classes
 from . import commands
+from . import help 
 import random
 
 mapkey = ("""
@@ -20,8 +21,8 @@ planetarray[4][4] = player
 mapsectors = ("""
 Example Sector Layout:
 -----------------------
-| | 1 2 3 4 5 6 7 8 9 | 
------------------------ 
+| | 1 2 3 4 5 6 7 8 9 |
+-----------------------
 |1| # # # # # # # # # |
 |2| # B # # # # # # # |
 |3| # # # # P # # # # |
@@ -69,7 +70,7 @@ Q3:            Q4:
 |----|-----|   |-----|-----|
 """)
 
-shields = classes.Shields(100,100,100,20,100,2000) 
+shields = classes.Shields(100,100,100,20,100,2000)
 fs = shields.shields["front"]
 bs = shields.shields['rear']
 ls = shields.shields['left']
@@ -82,10 +83,9 @@ playerlocation = classes.Location(1,1,1,1)
 damage = classes.Damage(0,avgshields,0,0,0)
 
 
-status = classes.Ship(" ","on",2000,2000,1) 
+status = classes.Ship(" ","on",2000,2000,1)
 sn = status.status["shipname"]
 ss = status.status["shieldsstatus"]
 se = status.status["energy"]
 ste = status.status["totalenergy"]
 wt = status.status["warptime"]
-
