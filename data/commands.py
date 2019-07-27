@@ -7,8 +7,56 @@ import sys
 ######################
 ### Custom Imports ###
 ######################
-from data.help import * 
+from . import help
+from . import definitions
 ######################
+
+def playerchart(): # Player info
+    pm = definitions.player.stats["money"]
+    pp1 = definitions.player.stats["photons"]
+    pp2 = definitions.player.stats["phasers"]
+    pws = definitions.player.stats["warpspeed"]
+    pc = definitions.player.stats["cannon"]
+    pp = definitions.player.stats["probes"]
+    lq = definitions.playerlocation.location["quadrant"]
+    ls = definitions.playerlocation.location["sector"]
+    lx = definitions.playerlocation.location["gridx"]
+    ly = definitions.playerlocation.location["gridy"]
+    hd = definitions.damage.damage["hull"]
+    wdd = definitions.damage.damage["warpdrive"]
+    sd = definitions.damage.damage["scanners"]
+    td = definitions.damage.damage["transporter"]
+    playerchart = (f"""
+    <--- Status --->
+Shields:
+  -Front Shields: {definitions.fs}
+  -Rear Shields: {definitions.bs}
+  -Left Shields: {definitions.ls}
+  -Right Shields: {definitions.rs}
+Damage:
+  -Hull: {hd}
+  -Warp Drive: {wdd}
+  -Scanners: {sd}
+  -Trasporter: {td}
+  -Shields: {definitions.avgshields}%
+Player:
+  -Money: {pm}
+  -Photons: {pp1}
+  -Phasers: {pp2}
+  -Warp Speed: {pws}
+  -Cannons: {pc}
+  -Probes: {pp}
+Location:
+  -Quadrant: {lq}
+  -Sector: {ls}
+  -X Coord: {lx}
+  -Y Coord: {ly}
+Ship:
+  -Ship Name: {definitions.status.status['shipname']}
+MODE: ({definitions.player.stats["mode"]})
+    """)
+    print(playerchart)
+
 
 #Input command function
 def command():
@@ -59,3 +107,9 @@ def command():
         if helpprompt in ["yes",'YES',"y","Y"]:
             help.helpcommand()
         command()
+########################################################################
+################## Just Average out the shields ########################
+########################################################################
+def shieldsavg(fs,bs,ls,rs):
+    avg = (fs + bs + ls + rs)/4
+    return avg

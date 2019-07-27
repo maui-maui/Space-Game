@@ -16,4 +16,4 @@ from data.startup import *
 ########################
 ##### Game Startup #####
 ########################
-startup.start()
+start()

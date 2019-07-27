@@ -1,11 +1,11 @@
 ######################
 ### Custom Imports ###
 ######################
-from data.settings import *
-from data.commands import * 
+from . import commands
+from . import settings
 ######################
 
-def start():
+def start(): # The Start up of game
     print("""
 *--------------------------------*
 Welcome to Space Exploration Game

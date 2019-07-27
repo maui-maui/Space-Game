@@ -5,7 +5,7 @@ import time
 ######################
 ### Custom Imports ###
 ######################
-from data.commands import * 
+from . import commands
 ######################
 
 # basic help command that lists available commands and brief description of commands functionality
