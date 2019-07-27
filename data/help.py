@@ -51,7 +51,7 @@ quit - Quit Game
 clear - Clear screen
 
 settings - Change your settings
-    """)
+""")
     commands.command()
 
 def helpmap2():
