@@ -12,6 +12,8 @@ import random
 from data.definitions import *
 from data.classes import *
 from data.commands import * 
+from data.startup import *
 ########################
 ##### Game Startup #####
 ########################
+startup.start()
