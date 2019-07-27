@@ -171,6 +171,8 @@ def movecommand():
 def mapcommand():
     cquadrant = definitions.playerlocation.location["quadrant"]
     csector = definitions.playerlocation.location["sector"]
+    gridx = definitions.playerlocation.location["gridx"]
+    gridy = definitions.playerlocation.location["gridy"]
     cgridx = definitions.playerlocation.location["gridx"]
     cgridy = definitions.playerlocation.location["gridy"]
     print(f'LOCATION:\nQ: {cquadrant}\nS: {csector}\nG: {cgridy}-{cgridx}\n|\n|--> {cquadrant}-{csector}|{cgridy}-{cgridx}')
@@ -269,7 +271,9 @@ def command():
         playerchart()
         command()
 
-#################### Game SYS ######################################
+#########################################################################
+######################### Game SYS ######################################
+#########################################################################
     elif commands in ['set',"SET","settings","SETTINGS"]:
         settings.settings()
     elif commands in ["clean","clear","cls","clr"]:

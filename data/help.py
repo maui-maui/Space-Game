@@ -13,39 +13,45 @@ with open('data/maps.json', 'r') as f:
 
 def helpcommand():
     print("""
-This is the help menu...
-    You can access this menu at anytime by typing 'help' or '?'
-    (without the quotes) when your prompted for a command.
+Commands to work on:
+warp - Set your warp speed (1-10).
 
-    To get help on a specific command type either ? command or
-    'help command'(without the quotes).
+transport - If your in orbit of a planet or docked at a base you can transport to either the planet or the base.
 
-    *move - Move around the map.
-    warp - Set your warp speed (1-10).
-    transport - If your in orbit of a planet or docked at a base you can transport to either the planet or the base.
-    dock - Dock into a base if you are on one of the adjacent places.
-    orbit - Orbit a planet.
-    status - Info
-    damage -
-    logs -
-    missions -
-    repairs -
-    warp - Change your warp speed.
-    planet scanner -
-    mine -
-    search -
-    chart -
-    srscan - Scans the current quadrant(Sectors 1-4 of quadrant x).
-    lrscan - Scans all 4 quadrants.
-    scan -
-    *map - Current Maps.
-    sector chart -
-    probe -
+dock - Dock into a base if you are on one of the adjacent places.
 
-    quit - Quit Game
-    clear - Clear screen
-    settings - Change your settings
-    """)
+orbit - Orbit a planet.
+
+damage - Check Damage status of ship
+
+logs - Check Mission and Attack/Defense logs
+
+missions - Check current missions
+
+repairs - Make repairs on ship
+
+planet scanner - Scans a planet for resources
+
+mine - Mines resources from a planet
+
+srscan - Scans the current quadrant(Sectors 1-4 of quadrant x).
+
+lrscan - Scans all 4 quadrants.
+
+scan - General scan
+
+map - Current Maps.
+
+sector chart - Maps out sector
+
+probe - Send probe to system or planet
+
+quit - Quit Game
+
+clear - Clear screen
+
+settings - Change your settings
+""")
     commands.command()
 
 def helpmap2():
