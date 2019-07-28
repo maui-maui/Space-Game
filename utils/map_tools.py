@@ -134,7 +134,7 @@ def print_sector(mapdata: dict):
     text = "|  | "
     for index in range(1, map_size):
         if index <= 9:
-            text += f"{index}  "
+            text += f"0{index} "
         else:
             text += f"{index} "
     text += "|"
@@ -147,7 +147,7 @@ def print_sector(mapdata: dict):
     counter = 1
     for map_data in mapdata.values():
         if counter <= 9:
-            text = f"| {counter}| "
+            text = f"|0{counter}| "
         else:
             text = f"|{counter}| "
         counter += 1
@@ -157,5 +157,3 @@ def print_sector(mapdata: dict):
         print(text)
 
     print(seperator)
-
-print_sector(generate_sector(12))
