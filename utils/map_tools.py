@@ -4,6 +4,7 @@ Tools for Generating Sectors and Quadrants
 Contains:
     generate_sector - Generates an Sector
     generate_quadrant - Generates an Quadrant
+    print_sector - Prints the Sector into the Console
 """
 
 import random
@@ -106,5 +107,51 @@ def generate_quadrant(size: int) -> dict:
     pass
 
 
-def parse_map(mapdata: list):
-    pass
+def print_sector(mapdata: dict):
+    """
+    Prints the Map Data into the Console
+
+    ---------------------
+    |  | 1  2  3  4  5  |
+    ---------------------
+    | 1| P  B  *  P  C  |
+    | 2| P  ^  P  C  P  |
+    | 3| ^  *  @  *  ^  |
+    | 4| P  *  *  ^  *  |
+    | 5| P  !  P  ^  ^  |
+    ---------------------
+
+    Works with any Map Size
+
+    Parameters
+    ----------
+    mapdata: dict An Dict Containing the Map Data (generate it with generate_sector)
+    """
+
+    map_size = len(mapdata) + 1
+    text = "|  | "
+    for index in range(1, map_size):
+        if index <= 9:
+            text += f"{index}  "
+        else:
+            text += f"{index} "
+    text += "|"
+    seperator = "-" * len(text)
+
+    print(seperator)
+    print(text)
+    print(seperator)
+
+    counter = 1
+    for map_data in mapdata.values():
+        if counter <= 9:
+            text = f"| {counter}| "
+        else:
+            text = f"|{counter}| "
+        counter += 1
+        for position_data in map_data:
+            text += f"{position_data}  "
+        text += "|"
+        print(text)
+
+    print(seperator)
