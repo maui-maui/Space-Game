@@ -9,6 +9,7 @@ import sys
 ######################
 from . import help
 from . import definitions
+from . import settings
 ######################
 
 def playerchart(): # Player info
