@@ -9,6 +9,10 @@ Contains:
 
 import random
 
+import colorama
+from colorama import Fore
+
+colorama.init()
 
 # TODO: Add Error Catching when no @ got Generated
 def generate_sector(size: int) -> dict:
@@ -152,8 +156,21 @@ def print_sector(mapdata: dict):
             text = f"|{counter}| "
         counter += 1
         for position_data in map_data:
+            if position_data is "*":
+                position_data = Fore.YELLOW + position_data + Fore.RESET
+            elif position_data in ["!", "C", "^"]:
+                position_data = Fore.RED + position_data + Fore.RESET
+            elif position_data is "B":
+                position_data = Fore.GREEN + position_data + Fore.RESET
+            elif position_data is "P":
+                position_data = Fore.BLUE + position_data + Fore.RESET
+            elif position_data is "#":
+                position_data = Fore.LIGHTBLACK_EX + position_data + Fore.RESET
             text += f"{position_data}  "
         text += "|"
         print(text)
 
     print(seperator)
+
+
+print_sector(generate_sector(12))
