@@ -19,9 +19,11 @@ def generate_sector(size: int) -> dict:
 
     Dict Structure:
         {
-            X!: [MapData]
-            X2: [MapData]
+            0: [MapData]
+            1: [MapData]
         \
+
+    Warning: Keep in Mind that the dict and lists are zero indexed meaning 0 is the first value
 
     Parameters
     ----------
@@ -29,7 +31,7 @@ def generate_sector(size: int) -> dict:
 
     Returns
     -------
-    An Dict with Lists containing the Map Data per Row
+    An Dict with Lists containing the Lists with the Row Data
     """
 
     output = {}
@@ -79,7 +81,7 @@ def generate_sector(size: int) -> dict:
                     continue
 
             row.append(random_object)
-        output[f"X{x}"] = row
+        output[x] = row
 
     return output
 
@@ -155,3 +157,5 @@ def print_sector(mapdata: dict):
         print(text)
 
     print(seperator)
+
+print_sector(generate_sector(12))
