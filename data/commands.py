@@ -78,7 +78,6 @@ def command():
     elif commands in ["move","mv"]:
         movecommand()
     elif commands in ["map","m"]:
-        mapcommand()
         command()
     elif commands in ["stats","status","ss"]:
         playerchart()

@@ -8,7 +8,6 @@ Contains:
 
 import random
 
-
 # TODO: Add Error Catching when no @ got Generated
 def generate_sector(size: int) -> list:
     """
@@ -25,7 +24,7 @@ def generate_sector(size: int) -> list:
     An Nested Array with the Map Data
     """
     output = []
-    map_objects = ["*", "P", "C", "!", "^", "B", "@"]
+    map_objects = ["*", "P", "C", "!", "^", "B", "@", "#"]
     placed_player = False
 
     for x in range(size):
@@ -47,3 +46,4 @@ def generate_sector(size: int) -> list:
 
 def generate_quadrant(size: int) -> list:
     pass
+print(mapgen())
