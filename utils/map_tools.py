@@ -36,7 +36,7 @@ def generate_sector(size: int) -> dict:
 
     output = {}
     player_set = False
-    map_objects = ["*", "P", "C", "!", "^", "B", "@"]
+    map_objects = ["#", "P", "C", "!", "^", "B", "@"]
 
     for x in range(size):
         row = []
@@ -59,7 +59,7 @@ def generate_sector(size: int) -> dict:
                     row.append("C")
                     continue
                 else:
-                    row.append("*")
+                    row.append("#")
                     continue
 
             # Make Enemy Bases less Common
@@ -68,7 +68,7 @@ def generate_sector(size: int) -> dict:
                     row.append("!")
                     continue
                 else:
-                    row.append("*")
+                    row.append("#")
                     continue
 
             # Make Friendly Bases Less Common
@@ -77,7 +77,7 @@ def generate_sector(size: int) -> dict:
                     row.append("B")
                     continue
                 else:
-                    row.append("*")
+                    row.append("#")
                     continue
 
             row.append(random_object)
