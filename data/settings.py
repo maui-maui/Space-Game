@@ -11,6 +11,7 @@ from . import help
 from . import commands
 ######################
 
+# Basic Settings#
 
 def setname(): # Set your characters name
     name = input("What is your name captain?\n>>  ")
@@ -27,6 +28,7 @@ def setshipname(): # Set ship name
     print(f"Captain Your ship name is set to {definitions.status.status['shipname']}")
     commands.command()
 
+# Mode Settings #
 def setmodewasd():
     mode = definitions.player.stats["mode"]
     definitions.player.stats["mode"] = "WASD"
@@ -37,6 +39,8 @@ def setmodetxt():
     definitions.player.stats["mode"] = "TXT"
     print("Mode changed to TXT")
 
+
+# Settings command
 def settings():
         choice = input("""
         Player Settings:
