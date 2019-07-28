@@ -171,6 +171,3 @@ def print_sector(mapdata: dict):
         print(text)
 
     print(seperator)
-
-
-print_sector(generate_sector(12))
